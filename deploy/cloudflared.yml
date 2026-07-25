@@ -18,8 +18,8 @@
 #   cloudflared tunnel route dns allura-design design.faithmeats.com
 #   cloudflared tunnel run --config deploy/cloudflared.yml allura-design
 
-tunnel: allura-design
-credentials-file: /home/open-design/.cloudflared/allura-design.json
+tunnel: cb12bc5f-1f05-405d-8bac-6f784396cd12
+credentials-file: /home/ronin704/.cloudflared/cb12bc5f-1f05-405d-8bac-6f784396cd12.json
 
 ingress:
   # design.faithmeats.com → Allura Design daemon
