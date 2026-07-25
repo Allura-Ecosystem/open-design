@@ -1,0 +1,134 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * design-systems/faithmeats/tokens.css
+ *
+ * Structured token bindings for the Faith Meats brand design system —
+ * a premium halal beef jerky brand. Snow canvas, Night ink, Gold
+ * accent, and 5 flavor colors for global flavor cueing.
+ *
+ * Source: Faith Meats Brand Guidelines (official) + faith-meats-brand-content
+ * skill. Every value is the real brand token — no invented colors.
+ *
+ * Brand-specific schema decisions:
+ *   1. --bg is bound to Snow (#FBF5F3) — the documented primary page
+ *      background. Never pure white.
+ *   2. --surface is bound to a warm paper tint (#FFFFFF with a slight
+ *      warm bias via opacity on Snow) — cards lift onto Snow.
+ *   3. --accent is bound to Gold (#C8AD55) — the documented accent
+ *      color for dividers, borders, CTAs, highlights, emphasis.
+ *   4. --fg is bound to Night (#0B0808) — the documented body text
+ *      and heading color. Warm near-black, not pure black.
+ *   5. Flavor colors are exposed as semantic-ish tokens for flavor
+ *      cueing: --flavor-shawarma, --flavor-harissa, --flavor-korean,
+ *      --flavor-balinese, --flavor-sriracha. Each maps to a documented
+ *      flavor color.
+ *   6. Typography: Crimson Pro (headings, serif) + DM Sans (body, sans).
+ *      Basic Sans is the documented brand font but isn't on Google
+ *      Fonts, so DM Sans is the approved web substitute.
+ *   7. Wide letter-spacing on tagline (0.2em-0.4em) for premium feel.
+ * ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Surface (3 levels) ──────────────────────────────────────────
+   * Snow canvas, paper surface, warm Snow tint for intermediate. */
+  --bg: #FBF5F3;
+  --surface: #FFFFFF;
+  --surface-warm: #F5EDE8;
+
+  /* ─── Foreground ramp (4 levels) ─────────────────────────────────
+   * Night (primary), warm dark brown (secondary), muted, meta. */
+  --fg: #0B0808;
+  --fg-2: #3A2A24;
+  --muted: #6B5A50;
+  --meta: #9A8A80;
+
+  /* ─── Border (2 levels) ──────────────────────────────────────────
+   * Gold border (the documented divider color), soft gold tint. */
+  --border: #C8AD55;
+  --border-soft: #E8D9A8;
+
+  /* ─── Accent ──────────────────────────────────────────────────────
+   * Gold — the documented accent for dividers, borders, CTAs,
+   * highlights, and emphasis. */
+  --accent: #C8AD55;
+  --accent-on: #0B0808;
+
+  /* ─── Accent states ───────────────────────────────────────────────
+   * Hover lifts brighter; active darkens to a deeper gold. */
+  --accent-hover: #D4BC66;
+  --accent-active: #B8983A;
+
+  /* ─── Flavor Colors (5 global flavors) ────────────────────────────
+   * Each maps to a documented flavor color for visual cueing.
+   * Use as section accents, badges, or decorative elements. */
+  --flavor-shawarma: #2B4E27;   /* Cal Poly Green */
+  --flavor-harissa: #A3320B;    /* Brown */
+  --flavor-korean: #4C1A54;    /* Russian Violet */
+  --flavor-balinese: #D46313;   /* Cocoa Brown */
+  --flavor-sriracha: #C1292E;   /* Fire Engine Red */
+
+  /* ─── Semantic (mapped from flavor palette) ──────────────────────
+   * Success uses Cal Poly Green (Shawarma flavor color).
+   * Warning uses Cocoa Brown (Balinese flavor color).
+   * Danger uses Fire Engine Red (Sriracha flavor color).
+   * Gold is the highlight/badge semantic. */
+  --success: #2B4E27;
+  --warn:    #D46313;
+  --danger:  #C1292E;
+  --gold:    #C8AD55;
+
+  /* ─── Typography ──────────────────────────────────────────────────
+   * Crimson Pro for headings (serif, Bold/SemiBold).
+   * DM Sans for body (sans, Regular/Light) — approved web substitute
+   * for Basic Sans. JetBrains Mono for code/receipts. */
+  --font-display:
+    "Crimson Pro", "Crimson Text", Georgia, "Times New Roman", serif;
+  --font-body:
+    "DM Sans", "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* Type scale (px) — 16px body baseline, 56px hero ceiling. */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   24px;
+  --text-2xl:  32px;
+  --text-3xl:  44px;
+  --text-4xl:  56px;
+
+  /* Leading: airy body (1.65), tight display (1.15). */
+  --leading-body:  1.65;
+  --leading-tight: 1.15;
+
+  /* Display tracking: slight compression for editorial headlines.
+   * Tagline tracking is wide (0.2em-0.4em) for premium feel — handled
+   * at the component level, not as a global token. */
+  --tracking-display: -0.015em;
+  --tracking-tagline: 0.3em;
+
+  /* ─── Spacing ─────────────────────────────────────────────────────
+   * 4px base grid. Generous padding (2-3rem) per brand guidelines. */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+
+  /* ─── Radius ──────────────────────────────────────────────────────
+   * Subtle rounded corners (8px) — "not cartoonish" per guidelines. */
+  --radius-sm: 4px;
+  --radius:    8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-pill: 9999px;
+
+  /* ─── Shadow ──────────────────────────────────────────────────────
+   * Soft, warm shadows. */
+  --shadow-sm: 0 1px 2px rgba(11, 8, 8, 0.05);
+  --shadow:    0 4px 12px rgba(11, 8, 8, 0.08);
+  --shadow-lg: 0 18px 40px rgba(11, 8, 8, 0.10);
+}

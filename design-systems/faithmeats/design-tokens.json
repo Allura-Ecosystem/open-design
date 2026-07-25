@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "format": "od-design-tokens/v1",
+  "contract": "TOKEN_SCHEMA",
+  "generatedAt": "2026-07-25T00:00:00.000Z",
+  "source": {
+    "tokensCss": "tokens.css",
+    "brandDocs": "Faith Meats Brand Guidelines (official) + faith-meats-brand-content skill"
+  },
+  "summary": {
+    "totalTokens": 52,
+    "declaredTokens": 52,
+    "sourceBackedTokens": 52,
+    "sourceBackedA1": 30,
+    "fallbackTokens": 22,
+    "aliasTokens": 0,
+    "layerCounts": {
+      "A1-identity": 8,
+      "B-slot": 4,
+      "A2": 30,
+      "A1-structure": 14
+    },
+    "score": 100,
+    "grade": "excellent",
+    "recommendRebuild": false
+  },
+  "tokens": [
+    { "name": "--bg", "value": "#FBF5F3", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Snow — documented primary page background. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:30"], "sourceName": "--bg" },
+    { "name": "--surface", "value": "#FFFFFF", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Paper surface — cards lift onto Snow.", "sources": ["tokens.css:31"], "sourceName": "--surface" },
+    { "name": "--fg", "value": "#0B0808", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Night — documented body text and heading color. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:36"], "sourceName": "--fg" },
+    { "name": "--accent", "value": "#C8AD55", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Gold — documented accent for dividers, borders, CTAs, highlights. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:48"], "sourceName": "--accent" },
+    { "name": "--flavor-shawarma", "value": "#2B4E27", "type": "color", "layer": "A2", "confidence": "high", "reason": "Cal Poly Green — Shawarma flavor color. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:62"], "sourceName": "--flavor-shawarma" },
+    { "name": "--flavor-harissa", "value": "#A3320B", "type": "color", "layer": "A2", "confidence": "high", "reason": "Brown — Harissa Beef flavor color. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:63"], "sourceName": "--flavor-harissa" },
+    { "name": "--flavor-korean", "value": "#4C1A54", "type": "color", "layer": "A2", "confidence": "high", "reason": "Russian Violet — Korean BBQ flavor color. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:64"], "sourceName": "--flavor-korean" },
+    { "name": "--flavor-balinese", "value": "#D46313", "type": "color", "layer": "A2", "confidence": "high", "reason": "Cocoa Brown — Balinese Curry flavor color. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:65"], "sourceName": "--flavor-balinese" },
+    { "name": "--flavor-sriracha", "value": "#C1292E", "type": "color", "layer": "A2", "confidence": "high", "reason": "Fire Engine Red — Honey Sriracha flavor color. Source: Faith Meats Brand Guidelines.", "sources": ["tokens.css:66"], "sourceName": "--flavor-sriracha" }
+  ]
+}

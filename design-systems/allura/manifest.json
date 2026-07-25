@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "od-design-system-project/v1",
+  "id": "allura",
+  "name": "Allura",
+  "category": "Technology & Memory",
+  "description": "Warm, governed, connected, evidence-first design system for Allura Memory — the AI memory layer for real life.",
+  "source": {
+    "type": "bundled",
+    "origin": "Allura Ecosystem — derived from allura-memory/src/app/globals.css and docs/allura/BLUEPRINT.md"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css",
+    "designTokens": "design-tokens.json",
+    "tailwind": "tailwind-v4.css",
+    "components": "components.html"
+  },
+  "usage": "USAGE.md",
+  "componentsManifest": "components.manifest.json",
+  "importMode": "normalized",
+  "craft": {
+    "applies": [],
+    "suggested": [
+      "color",
+      "accessibility-baseline"
+    ],
+    "exemptions": []
+  },
+  "preview": {
+    "dir": "preview",
+    "pages": [
+      {
+        "path": "preview/colors.html",
+        "role": "colors",
+        "title": "Colors"
+      },
+      {
+        "path": "preview/typography.html",
+        "role": "typography",
+        "title": "Typography"
+      },
+      {
+        "path": "preview/spacing.html",
+        "role": "spacing",
+        "title": "Spacing"
+      }
+    ]
+  }
+}

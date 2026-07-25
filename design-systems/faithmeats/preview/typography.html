@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faith Meats typography</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+      main { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+      h1 { margin: 0 0 32px; font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      .row { border-bottom: 1px solid var(--border); padding: 24px 0; }
+      .label { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+      .sample-display { font-family: var(--font-display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      .sample-body { font-family: var(--font-body); line-height: var(--leading-body); }
+      .sample-mono { font-family: var(--font-mono); }
+      .tagline { font-family: var(--font-display); letter-spacing: var(--tracking-tagline); text-transform: uppercase; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Typography</h1>
+
+      <div class="row">
+        <div class="label">Tagline · Crimson Pro · wide tracking</div>
+        <div class="tagline" style="font-size: var(--text-lg)">FAITH MEATS PREMIUM • HALAL JERKY</div>
+      </div>
+      <div class="row">
+        <div class="label">Hero Display XL · --text-4xl · 56px</div>
+        <div class="sample-display" style="font-size: var(--text-4xl)">A Snack You Can Believe In</div>
+      </div>
+      <div class="row">
+        <div class="label">Hero Display L · --text-3xl · 44px</div>
+        <div class="sample-display" style="font-size: var(--text-3xl)">Globally Inspired.</div>
+      </div>
+      <div class="row">
+        <div class="label">Section Heading · --text-2xl · 32px</div>
+        <div class="sample-display" style="font-size: var(--text-2xl)">Snacking Done Right</div>
+      </div>
+      <div class="row">
+        <div class="label">Card Title · --text-xl · 24px</div>
+        <div class="sample-display" style="font-size: var(--text-xl)">Premium Angus Beef Jerky</div>
+      </div>
+      <div class="row">
+        <div class="label">Body Primary · --text-base · 16px · DM Sans</div>
+        <div class="sample-body" style="font-size: var(--text-base)">Faith Meats elevates the jerky market through globally inspired recipes, premium Angus beef, and transparent, ethical production. Whether you grew up with shawarma after Friday prayers or you're discovering it for the first time, let our jerky transport you.</div>
+      </div>
+      <div class="row">
+        <div class="label">Control Label · --text-sm · 14px</div>
+        <div class="sample-body" style="font-size: var(--text-sm)">Shop flavors</div>
+      </div>
+      <div class="row">
+        <div class="label">Mono · JetBrains Mono · --text-sm</div>
+        <div class="sample-mono" style="font-size: var(--text-sm)">order_id: FM-2026-001 · Auburn, WA 98002</div>
+      </div>
+    </main>
+  </body>
+</html>

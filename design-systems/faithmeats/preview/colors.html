@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faith Meats colors</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+      main { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+      h1 { margin: 0 0 32px; font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      h2 { margin: 32px 0 16px; font-family: var(--font-display); font-size: var(--text-xl); }
+
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+      .swatch { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-sm); }
+      .color { height: 88px; background: var(--value); }
+      .meta { padding: 12px; color: var(--muted); font-size: 14px; }
+      strong { display: block; margin-bottom: 4px; color: var(--fg); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Color roles</h1>
+
+      <h2>Primary</h2>
+      <section class="grid">
+        <article class="swatch" style="--value: var(--bg)"><div class="color"></div><div class="meta"><strong>Snow</strong>--bg · #FBF5F3</div></article>
+        <article class="swatch" style="--value: var(--surface)"><div class="color"></div><div class="meta"><strong>Paper</strong>--surface · #FFFFFF</div></article>
+        <article class="swatch" style="--value: var(--fg)"><div class="color"></div><div class="meta"><strong>Night</strong>--fg · #0B0808</div></article>
+        <article class="swatch" style="--value: var(--accent)"><div class="color"></div><div class="meta"><strong>Gold</strong>--accent · #C8AD55</div></article>
+      </section>
+
+      <h2>Flavor colors</h2>
+      <section class="grid">
+        <article class="swatch" style="--value: var(--flavor-shawarma)"><div class="color"></div><div class="meta"><strong>Shawarma</strong>--flavor-shawarma · #2B4E27</div></article>
+        <article class="swatch" style="--value: var(--flavor-harissa)"><div class="color"></div><div class="meta"><strong>Harissa Beef</strong>--flavor-harissa · #A3320B</div></article>
+        <article class="swatch" style="--value: var(--flavor-korean)"><div class="color"></div><div class="meta"><strong>Korean BBQ</strong>--flavor-korean · #4C1A54</div></article>
+        <article class="swatch" style="--value: var(--flavor-balinese)"><div class="color"></div><div class="meta"><strong>Balinese Curry</strong>--flavor-balinese · #D46313</div></article>
+        <article class="swatch" style="--value: var(--flavor-sriracha)"><div class="color"></div><div class="meta"><strong>Honey Sriracha</strong>--flavor-sriracha · #C1292E</div></article>
+      </section>
+
+      <h2>Semantic</h2>
+      <section class="grid">
+        <article class="swatch" style="--value: var(--success)"><div class="color"></div><div class="meta"><strong>Success</strong>--success · #2B4E27</div></article>
+        <article class="swatch" style="--value: var(--warn)"><div class="color"></div><div class="meta"><strong>Warning</strong>--warn · #D46313</div></article>
+        <article class="swatch" style="--value: var(--danger)"><div class="color"></div><div class="meta"><strong>Danger</strong>--danger · #C1292E</div></article>
+      </section>
+    </main>
+  </body>
+</html>

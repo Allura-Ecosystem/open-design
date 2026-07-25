@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Allura typography</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+      main { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+      h1 { margin: 0 0 32px; font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      .row { border-bottom: 1px solid var(--border-soft); padding: 24px 0; }
+      .label { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+      .sample-display { font-family: var(--font-display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      .sample-body { font-family: var(--font-body); line-height: var(--leading-body); }
+      .sample-mono { font-family: var(--font-mono); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Typography</h1>
+
+      <div class="row">
+        <div class="label">Hero Display XL · --text-4xl · 48px</div>
+        <div class="sample-display" style="font-size: var(--text-4xl)">Memory that shows its work</div>
+      </div>
+      <div class="row">
+        <div class="label">Hero Display L · --text-3xl · 40px</div>
+        <div class="sample-display" style="font-size: var(--text-3xl)">Warm, governed, connected</div>
+      </div>
+      <div class="row">
+        <div class="label">Section Heading · --text-2xl · 32px</div>
+        <div class="sample-display" style="font-size: var(--text-2xl)">The AI memory layer for real life</div>
+      </div>
+      <div class="row">
+        <div class="label">Card Title · --text-xl · 24px</div>
+        <div class="sample-display" style="font-size: var(--text-xl)">Evidence-first memory</div>
+      </div>
+      <div class="row">
+        <div class="label">Action Heading · --text-lg · 18px</div>
+        <div class="sample-body" style="font-size: var(--text-lg)">View audit receipt</div>
+      </div>
+      <div class="row">
+        <div class="label">Body Primary · --text-base · 16px</div>
+        <div class="sample-body" style="font-size: var(--text-base)">Allura is a governed memory engine for AI systems — the backbone that gives your agents durable, auditable, and policy-enforced memory.</div>
+      </div>
+      <div class="row">
+        <div class="label">Control Label · --text-sm · 14px</div>
+        <div class="sample-body" style="font-size: var(--text-sm)">Approve proposal</div>
+      </div>
+      <div class="row">
+        <div class="label">Micro Label · --text-xs · 12px</div>
+        <div class="sample-body" style="font-size: var(--text-xs)">group_id: allura-system</div>
+      </div>
+      <div class="row">
+        <div class="label">Mono · IBM Plex Mono · --text-sm</div>
+        <div class="sample-mono" style="font-size: var(--text-sm)">receipt_id: rc_01HZX2P3K4M5N6Q7R8S9T0V1W2</div>
+      </div>
+    </main>
+  </body>
+</html>

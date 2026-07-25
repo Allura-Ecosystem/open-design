@@ -1,0 +1,127 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * design-systems/allura/tokens.css
+ *
+ * Structured token bindings for the Allura brand design system —
+ * warm, governed, connected, evidence-first. The visual language is
+ * cream canvases, charcoal ink, a restrained blue accent, and warm
+ * orange/gold/green semantic colors. This file is the
+ * *machine-readable* form of the values described in `DESIGN.md`.
+ * Agents are expected to paste the `:root { … }` block verbatim into
+ * the first `<style>` of every artifact they generate against this
+ * design system, then reference everything via var(--name) from then on.
+ *
+ * Brand-specific schema decisions (non-obvious bindings worth flagging
+ * for reviewers and downstream brand authors):
+ *   1. --bg is bound to Allura cream (#f6f3ec), NOT white. Allura's
+ *      signature is the warm cream canvas — collapsing it to white
+ *      would erase the brand's atmosphere.
+ *   2. --surface is bound to Allura paper (#fffdf8), a warm near-white
+ *      that cards and elevated surfaces lift onto. --surface-warm is
+ *      bound to a softer tint (#fbf8f0) for intermediate tiers.
+ *   3. --accent is bound to Allura blue (#2961b8), the primary action
+ *      and link color. --accent-on is white (the label on blue fills).
+ *   4. --fg is bound to Allura charcoal (#1b1d21), NOT pure black.
+ *      Allura's ink is warm charcoal — pure black would feel cold and
+ *      fight the cream canvas.
+ *   5. Semantic colors (success/warn/danger) use Allura's green/orange/red
+ *      brand palette, not generic web defaults.
+ *   6. Typography uses IBM Plex Sans (display + body) and IBM Plex Mono —
+ *      Allura's documented font families.
+ * ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Surface (3 levels) ──────────────────────────────────────────
+   * Allura's canvas is warm cream — the signature atmosphere. Cards
+   * lift onto paper (warm near-white), and surface-warm is a softer
+   * tint for intermediate tiers. */
+  --bg: #f6f3ec;
+  --surface: #fffdf8;
+  --surface-warm: #fbf8f0;
+
+  /* ─── Foreground ramp (4 levels) ─────────────────────────────────
+   * Allura's text neutrals: charcoal (primary), a mid gray (secondary),
+   * a softer muted (helper copy), and a faint meta (tertiary metadata). */
+  --fg: #1b1d21;
+  --fg-2: #374151;
+  --muted: #6b6e73;
+  --meta: #9ca3af;
+
+  /* ─── Border (2 levels) ──────────────────────────────────────────
+   * Soft border is the warm cream-aligned divider; border is the
+   * stronger field outline. */
+  --border: #d1c7b2;
+  --border-soft: #e4dccb;
+
+  /* ─── Accent ──────────────────────────────────────────────────────
+   * Allura blue — the system's primary action and link color. One
+   * accent, used for primary actions, links, focus states, and one
+   * clear focal element per screen. */
+  --accent: #2961b8;
+  --accent-on: #ffffff;
+
+  /* ─── Accent states ───────────────────────────────────────────────
+   * Hover lifts slightly brighter; active darkens to a deeper blue. */
+  --accent-hover: #3a72c9;
+  --accent-active: #1e4a9e;
+
+  /* ─── Semantic (Allura brand palette) ────────────────────────────
+   * Allura uses its own green/orange/red/gold for semantic states,
+   * not generic web defaults. Reserve under 5% of any surface area. */
+  --success: #298f57;
+  --warn:    #f2752e;
+  --danger:  #bf332e;
+  --gold:    #c89b3c;
+
+  /* ─── Typography ──────────────────────────────────────────────────
+   * IBM Plex Sans for display and body; IBM Plex Mono for code.
+   * Fallback chain mirrors the Allura Memory dashboard. */
+  --font-display:
+    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body:
+    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono:
+    "IBM Plex Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* Type scale (px) — Allura's dashboard baseline is 16px body.
+   * Display ceiling is 48px for hero moments. */
+  --text-xs:   12px;   /* Micro UI — fine print, micro labels */
+  --text-sm:   14px;   /* Control Label — buttons, helper labels */
+  --text-base: 16px;   /* Body Primary — reading baseline */
+  --text-lg:   18px;   /* Link/Action Heading — large promo links */
+  --text-xl:   24px;   /* Card/Product Title — tile-level naming */
+  --text-2xl:  32px;   /* Section Heading — campaign section titles */
+  --text-3xl:  40px;   /* Hero Display L — homepage hero moments */
+  --text-4xl:  48px;   /* Hero Display XL — max hero */
+
+  /* Leading envelope: airy body (1.6), tight display (1.1). */
+  --leading-body:  1.6;
+  --leading-tight: 1.1;
+
+  /* Display tracking: slight compression for machined headlines. */
+  --tracking-display: -0.01em;
+
+  /* ─── Spacing ─────────────────────────────────────────────────────
+   * 4px base grid. Allura's dashboard uses 4-8-12-16-24-32-48-64. */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+
+  /* ─── Radius ──────────────────────────────────────────────────────
+   * Allura uses soft, rounded corners — not pill capsules. */
+  --radius-sm: 4px;
+  --radius:    8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* ─── Shadow ──────────────────────────────────────────────────────
+   * Soft, warm shadows — not harsh black drops. */
+  --shadow-sm: 0 1px 2px rgba(27, 29, 33, 0.04);
+  --shadow:    0 4px 12px rgba(27, 29, 33, 0.06);
+  --shadow-lg: 0 18px 40px rgba(27, 29, 33, 0.06);
+}

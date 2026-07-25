@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faith Meats spacing</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+      main { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+      h1 { margin: 0 0 32px; font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      .row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
+      .label { color: var(--muted); font-size: 14px; min-width: 120px; }
+      .bar { background: var(--accent); border-radius: 4px; height: 24px; }
+      .value { color: var(--fg-2); font-family: var(--font-mono); font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Spacing scale</h1>
+
+      <div class="row"><span class="label">--space-1</span><div class="bar" style="width: var(--space-1)"></div><span class="value">4px</span></div>
+      <div class="row"><span class="label">--space-2</span><div class="bar" style="width: var(--space-2)"></div><span class="value">8px</span></div>
+      <div class="row"><span class="label">--space-3</span><div class="bar" style="width: var(--space-3)"></div><span class="value">12px</span></div>
+      <div class="row"><span class="label">--space-4</span><div class="bar" style="width: var(--space-4)"></div><span class="value">16px</span></div>
+      <div class="row"><span class="label">--space-5</span><div class="bar" style="width: var(--space-5)"></div><span class="value">24px</span></div>
+      <div class="row"><span class="label">--space-6</span><div class="bar" style="width: var(--space-6)"></div><span class="value">32px</span></div>
+      <div class="row"><span class="label">--space-7</span><div class="bar" style="width: var(--space-7)"></div><span class="value">48px</span></div>
+      <div class="row"><span class="label">--space-8</span><div class="bar" style="width: var(--space-8)"></div><span class="value">64px</span></div>
+    </main>
+  </body>
+</html>

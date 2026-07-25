@@ -1217,4 +1217,17 @@ export const MCP_TEMPLATES: McpTemplate[] = [
     command: 'npx',
     args: ['-y', 'a11y-mcp-server'],
   },
+  {
+    id: 'allura-brain',
+    label: 'Allura Brain (governed memory)',
+    description:
+      'Allura Brain governed memory engine — PostgreSQL episodic traces + RuVector/Neo4j semantic memory with HITL curation. Retrieve before planning, persist concise outcomes after work, enforce allura-* tenant namespace. Exposes memory_search, memory_add, audit_*, governance_* tools. Requires a running Allura Brain MCP server (default: http://localhost:5888/mcp). See github.com/Allura-Ecosystem/Allura_Memory.',
+    transport: 'http',
+    authMode: 'none',
+    category: 'utilities',
+    homepage: 'https://github.com/Allura-Ecosystem/Allura_Memory',
+    example:
+      'Search Allura Brain for prior architecture decisions about the dashboard cutover, group_id allura-system.',
+    url: 'http://localhost:5888/mcp',
+  },
 ];

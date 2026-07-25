@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "od-design-system-project/v1",
+  "id": "faithmeats",
+  "name": "Faith Meats",
+  "category": "Food & Beverage",
+  "description": "Premium halal beef jerky — globally inspired, ethically sourced, community-rooted. Snow canvas, Night ink, Gold accent, 5 flavor colors.",
+  "source": {
+    "type": "bundled",
+    "origin": "Faith Meats Brand Guidelines (official) + faith-meats-brand-content skill"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css",
+    "designTokens": "design-tokens.json",
+    "tailwind": "tailwind-v4.css",
+    "components": "components.html"
+  },
+  "usage": "USAGE.md",
+  "componentsManifest": "components.manifest.json",
+  "importMode": "normalized",
+  "craft": {
+    "applies": [],
+    "suggested": [
+      "color",
+      "accessibility-baseline"
+    ],
+    "exemptions": []
+  },
+  "preview": {
+    "dir": "preview",
+    "pages": [
+      {
+        "path": "preview/colors.html",
+        "role": "colors",
+        "title": "Colors"
+      },
+      {
+        "path": "preview/typography.html",
+        "role": "typography",
+        "title": "Typography"
+      },
+      {
+        "path": "preview/spacing.html",
+        "role": "spacing",
+        "title": "Spacing"
+      }
+    ]
+  }
+}

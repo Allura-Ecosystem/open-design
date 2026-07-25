@@ -1,0 +1,90 @@
+# Allura Design — Docker Compose overlay
+#
+# This compose file deploys Open Design customized for the Allura ecosystem:
+# - Allura + Faith Meats design systems bundled
+# - Allura + Team Durham + Faith Meats skills bundled
+# - Allura Brain MCP server wired in
+# - Hermes Agent adapter enabled
+# - Cloudflare Tunnel for design.faithmeats.com
+#
+# Usage:
+#   1. Copy .env.example to .env and fill in values
+#   2. docker compose -f deploy/docker-compose.allura.yml up -d
+#
+# Requirements:
+#   - Allura Brain MCP server running (default: http://host.docker.internal:5888/mcp)
+#   - Cloudflared tunnel configured for design.faithmeats.com
+#   - OD_API_TOKEN generated via `openssl rand -hex 32`
+
+name: allura-design
+
+services:
+  open-design:
+    container_name: allura-design
+    image: ${ALLURA_DESIGN_IMAGE:-ghcr.io/allura-ecosystem/allura-design:latest}
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: always
+    environment:
+      NODE_ENV: production
+      NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=192}
+      OD_BIND_HOST: 0.0.0.0
+      OD_ALLOWED_ORIGINS: ${ALLURA_DESIGN_ALLOWED_ORIGINS:-https://design.faithmeats.com}
+      OD_PORT: 7456
+      OD_WEB_PORT: ${ALLURA_DESIGN_PORT:-7456}
+      OD_API_TOKEN: ${OD_API_TOKEN:?Please run 'openssl rand -hex 32' to generate one, and set it in your .env file.}
+      OD_CODEX_SANDBOX: ${OD_CODEX_SANDBOX:-}
+      # Allura Brain MCP — the daemon's MCP template registry includes
+      # allura-brain at http://localhost:5888/mcp. Inside Docker, the
+      # daemon reaches the host's Allura Brain via host.docker.internal.
+      # Override ALLURA_BRAIN_URL if Allura Brain runs elsewhere.
+      ALLURA_BRAIN_URL: ${ALLURA_BRAIN_URL:-http://host.docker.internal:5888/mcp}
+      # Hermes Agent — if installed on the host, the daemon detects it
+      # via PATH. Inside Docker, install hermes in the image or mount
+      # the hermes binary + config.
+      HERMES_CONFIG_DIR: ${HERMES_CONFIG_DIR:-/home/open-design/.hermes}
+    ports:
+      - "127.0.0.1:${ALLURA_DESIGN_PORT:-7456}:7456"
+    volumes:
+      - allura_design_data:/app/.od
+      # Mount Hermes config + plugins from host (read-only) so the
+      # daemon detects the hermes CLI and its allura-brain plugin.
+      - ${HERMES_HOME:-~/.hermes}:/home/open-design/.hermes:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: ${ALLURA_DESIGN_MEM_LIMIT:-384m}
+    pids_limit: 256
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:7456/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    depends_on:
+      - cloudflared
+
+  # Cloudflare Tunnel — exposes the daemon at design.faithmeats.com
+  # with Cloudflare Access protecting it (sasheed@faithmeats.com only).
+  # Requires CLOUDFLARE_TUNNEL_TOKEN set in .env.
+  cloudflared:
+    container_name: allura-design-tunnel
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel run
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?Set your Cloudflare Tunnel token in .env}
+    depends_on:
+      - open-design
+
+volumes:
+  allura_design_data:

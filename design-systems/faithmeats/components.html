@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faith Meats — reference components</title>
+    <meta
+      name="description"
+      content="Reference fixture for design-systems/faithmeats. Every visible
+        token comes from tokens.css; the page itself follows Faith Meats'
+        editorial rules — Snow canvas, Night ink, Gold accent, Crimson Pro
+        headings with wide tagline tracking, DM Sans body, and 5 flavor
+        colors for global flavor cueing."
+    />
+
+    <style>
+      :root {
+        --bg: #FBF5F3;
+        --surface: #FFFFFF;
+        --surface-warm: #F5EDE8;
+        --fg: #0B0808;
+        --fg-2: #3A2A24;
+        --muted: #6B5A50;
+        --meta: #9A8A80;
+        --border: #C8AD55;
+        --border-soft: #E8D9A8;
+        --accent: #C8AD55;
+        --accent-on: #0B0808;
+        --accent-hover: #D4BC66;
+        --accent-active: #B8983A;
+        --flavor-shawarma: #2B4E27;
+        --flavor-harissa: #A3320B;
+        --flavor-korean: #4C1A54;
+        --flavor-balinese: #D46313;
+        --flavor-sriracha: #C1292E;
+        --success: #2B4E27;
+        --warn: #D46313;
+        --danger: #C1292E;
+        --gold: #C8AD55;
+        --font-display: "Crimson Pro", "Crimson Text", Georgia, "Times New Roman", serif;
+        --font-body: "DM Sans", "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+        --text-xs: 12px;
+        --text-sm: 14px;
+        --text-base: 16px;
+        --text-lg: 18px;
+        --text-xl: 24px;
+        --text-2xl: 32px;
+        --text-3xl: 44px;
+        --text-4xl: 56px;
+        --leading-body: 1.65;
+        --leading-tight: 1.15;
+        --tracking-display: -0.015em;
+        --tracking-tagline: 0.3em;
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 24px;
+        --space-6: 32px;
+        --space-7: 48px;
+        --space-8: 64px;
+        --radius-sm: 4px;
+        --radius: 8px;
+        --radius-lg: 12px;
+        --radius-xl: 16px;
+        --radius-pill: 9999px;
+        --shadow-sm: 0 1px 2px rgba(11, 8, 8, 0.05);
+        --shadow: 0 4px 12px rgba(11, 8, 8, 0.08);
+        --shadow-lg: 0 18px 40px rgba(11, 8, 8, 0.10);
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-body); }
+      main { max-width: 800px; margin: 0 auto; padding: var(--space-7) var(--space-5); }
+      h1 { margin: 0 0 var(--space-6); font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+      h2 { margin: var(--space-6) 0 var(--space-4); font-family: var(--font-display); font-size: var(--text-xl); line-height: var(--leading-tight); }
+
+      /* Tagline */
+      .tagline { font-family: var(--font-display); letter-spacing: var(--tracking-tagline); text-transform: uppercase; font-size: var(--text-sm); color: var(--accent); }
+
+      /* Card */
+      .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-5); box-shadow: var(--shadow-sm); margin-bottom: var(--space-4); }
+      .card-title { font-family: var(--font-display); font-size: var(--text-lg); margin: 0 0 var(--space-2); }
+
+      /* Flavor badge */
+      .flavor-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); font-size: var(--text-xs); font-weight: 500; color: #fff; }
+      .flavor-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+      /* Button */
+      .btn { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border-radius: var(--radius); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; border: 1px solid transparent; cursor: pointer; text-decoration: none; }
+      .btn-primary { background: var(--accent); color: var(--accent-on); }
+      .btn-primary:hover { background: var(--accent-hover); }
+      .btn-primary:active { background: var(--accent-active); }
+      .btn-secondary { background: var(--surface); color: var(--fg); border-color: var(--border); }
+      .btn-secondary:hover { background: var(--surface-warm); }
+      .btn-ghost { background: transparent; color: var(--accent); border-color: var(--border-soft); }
+      .btn-ghost:hover { background: var(--surface-warm); }
+
+      /* Divider */
+      .divider { height: 1px; background: var(--border); margin: var(--space-5) 0; }
+
+      /* Input */
+      .input { width: 100%; padding: var(--space-2) var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--fg); font-family: var(--font-body); font-size: var(--text-sm); }
+      .input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+
+      /* Order row */
+      .order-row { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) 0; border-bottom: 1px solid var(--border-soft); }
+      .order-row:last-child { border-bottom: none; }
+      .order-label { color: var(--muted); font-size: var(--text-sm); }
+      .order-value { color: var(--fg); font-family: var(--font-mono); font-size: var(--text-sm); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="tagline">FAITH MEATS PREMIUM • HALAL JERKY</div>
+      <h1>Faith Meats — reference components</h1>
+
+      <h2>Flavor badges</h2>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span class="flavor-badge" style="background: var(--flavor-shawarma)"><span class="flavor-dot" style="background: #fff"></span>Shawarma</span>
+        <span class="flavor-badge" style="background: var(--flavor-harissa)"><span class="flavor-dot" style="background: #fff"></span>Harissa Beef</span>
+        <span class="flavor-badge" style="background: var(--flavor-korean)"><span class="flavor-dot" style="background: #fff"></span>Korean BBQ</span>
+        <span class="flavor-badge" style="background: var(--flavor-balinese)"><span class="flavor-dot" style="background: #fff"></span>Balinese Curry</span>
+        <span class="flavor-badge" style="background: var(--flavor-sriracha)"><span class="flavor-dot" style="background: #fff"></span>Honey Sriracha</span>
+      </div>
+
+      <h2>Product card</h2>
+      <div class="card">
+        <div class="card-title">Shawarma — Middle Eastern</div>
+        <p style="margin: 0 0 16px; color: var(--fg-2);">Nostalgia for shawarma after Friday prayers. Aromatic, meaty, portable homage.</p>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <span class="flavor-badge" style="background: var(--flavor-shawarma)"><span class="flavor-dot" style="background: #fff"></span>Shawarma</span>
+          <span style="color: var(--muted); font-size: var(--text-sm);">Zabiha Halal · Paleo · 0 Sugar</span>
+        </div>
+      </div>
+
+      <h2>Buttons</h2>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a class="btn btn-primary" href="#">Shop flavors</a>
+        <a class="btn btn-secondary" href="#">Our story</a>
+        <a class="btn btn-ghost" href="#">Contact →</a>
+      </div>
+
+      <h2>Input</h2>
+      <input class="input" type="email" placeholder="sabir.asheed@faithmeats.com" />
+
+      <h2>Order summary</h2>
+      <div class="card">
+        <div class="order-row"><span class="order-label">order_id</span><span class="order-value">FM-2026-001</span></div>
+        <div class="order-row"><span class="order-label">customer</span><span class="order-value">Sabir Asheed</span></div>
+        <div class="order-row"><span class="order-label">location</span><span class="order-value">Auburn, WA 98002</span></div>
+        <div class="order-row"><span class="order-label">total</span><span class="order-value">$48.00</span></div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="tagline" style="text-align: center;">Globally Inspired.</div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "format": "od-design-tokens/v1",
+  "contract": "TOKEN_SCHEMA",
+  "generatedAt": "2026-07-25T00:00:00.000Z",
+  "source": {
+    "tokensCss": "tokens.css",
+    "brandDocs": "allura-memory/src/app/globals.css, docs/allura/BLUEPRINT.md"
+  },
+  "summary": {
+    "totalTokens": 48,
+    "declaredTokens": 48,
+    "sourceBackedTokens": 48,
+    "sourceBackedA1": 28,
+    "fallbackTokens": 20,
+    "aliasTokens": 0,
+    "layerCounts": {
+      "A1-identity": 8,
+      "B-slot": 4,
+      "A2": 28,
+      "A1-structure": 12
+    },
+    "score": 100,
+    "grade": "excellent",
+    "recommendRebuild": false
+  },
+  "tokens": [
+    { "name": "--bg", "value": "#f6f3ec", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Allura cream — signature canvas. Source: globals.css --allura-cream.", "sources": ["tokens.css:38"], "sourceName": "--bg" },
+    { "name": "--surface", "value": "#fffdf8", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Allura paper — card surface. Source: globals.css --allura-paper.", "sources": ["tokens.css:39"], "sourceName": "--surface" },
+    { "name": "--surface-warm", "value": "#fbf8f0", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Intermediate warm tint between cream and paper.", "sources": ["tokens.css:40"], "sourceName": "--surface-warm" },
+    { "name": "--fg", "value": "#1b1d21", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Allura charcoal — primary text. Source: globals.css --allura-charcoal.", "sources": ["tokens.css:44"], "sourceName": "--fg" },
+    { "name": "--accent", "value": "#2961b8", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "Allura blue — primary action. Source: globals.css --allura-blue.", "sources": ["tokens.css:56"], "sourceName": "--accent" },
+    { "name": "--accent-on", "value": "#ffffff", "type": "color", "layer": "A1-identity", "confidence": "high", "reason": "White label on blue fill.", "sources": ["tokens.css:57"], "sourceName": "--accent-on" },
+    { "name": "--success", "value": "#298f57", "type": "color", "layer": "A2", "confidence": "high", "reason": "Allura green. Source: globals.css --allura-green.", "sources": ["tokens.css:66"], "sourceName": "--success" },
+    { "name": "--warn", "value": "#f2752e", "type": "color", "layer": "A2", "confidence": "high", "reason": "Allura orange. Source: globals.css --allura-orange.", "sources": ["tokens.css:67"], "sourceName": "--warn" },
+    { "name": "--danger", "value": "#bf332e", "type": "color", "layer": "A2", "confidence": "high", "reason": "Allura red. Source: globals.css --allura-red.", "sources": ["tokens.css:68"], "sourceName": "--danger" },
+    { "name": "--gold", "value": "#c89b3c", "type": "color", "layer": "A2", "confidence": "high", "reason": "Allura gold. Source: globals.css --allura-gold.", "sources": ["tokens.css:69"], "sourceName": "--gold" }
+  ]
+}

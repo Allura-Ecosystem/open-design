@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Allura colors</title>
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+      main { max-width: 980px; margin: 0 auto; padding: 48px 24px; }
+      h1 { margin: 0 0 32px; font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+      .swatch { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-sm); }
+      .color { height: 88px; background: var(--value); }
+      .meta { padding: 12px; color: var(--muted); font-size: 14px; }
+      strong { display: block; margin-bottom: 4px; color: var(--fg); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Color roles</h1>
+
+      <section class="grid">
+        <article class="swatch" style="--value: var(--bg)"><div class="color"></div><div class="meta"><strong>Background (Cream)</strong>--bg · #f6f3ec</div></article>
+        <article class="swatch" style="--value: var(--surface)"><div class="color"></div><div class="meta"><strong>Surface (Paper)</strong>--surface · #fffdf8</div></article>
+        <article class="swatch" style="--value: var(--surface-warm)"><div class="color"></div><div class="meta"><strong>Surface Warm</strong>--surface-warm · #fbf8f0</div></article>
+        <article class="swatch" style="--value: var(--fg)"><div class="color"></div><div class="meta"><strong>Foreground (Charcoal)</strong>--fg · #1b1d21</div></article>
+        <article class="swatch" style="--value: var(--fg-2)"><div class="color"></div><div class="meta"><strong>Foreground 2</strong>--fg-2 · #374151</div></article>
+        <article class="swatch" style="--value: var(--muted)"><div class="color"></div><div class="meta"><strong>Muted</strong>--muted · #6b6e73</div></article>
+        <article class="swatch" style="--value: var(--border)"><div class="color"></div><div class="meta"><strong>Border</strong>--border · #d1c7b2</div></article>
+        <article class="swatch" style="--value: var(--border-soft)"><div class="color"></div><div class="meta"><strong>Border Soft</strong>--border-soft · #e4dccb</div></article>
+        <article class="swatch" style="--value: var(--accent)"><div class="color"></div><div class="meta"><strong>Accent (Blue)</strong>--accent · #2961b8</div></article>
+        <article class="swatch" style="--value: var(--success)"><div class="color"></div><div class="meta"><strong>Success (Green)</strong>--success · #298f57</div></article>
+        <article class="swatch" style="--value: var(--warn)"><div class="color"></div><div class="meta"><strong>Warning (Orange)</strong>--warn · #f2752e</div></article>
+        <article class="swatch" style="--value: var(--danger)"><div class="color"></div><div class="meta"><strong>Danger (Red)</strong>--danger · #bf332e</div></article>
+        <article class="swatch" style="--value: var(--gold)"><div class="color"></div><div class="meta"><strong>Gold</strong>--gold · #c89b3c</div></article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+# Cloudflare Access Policy for Allura Design
+#
+# This document describes the Cloudflare Access application that protects
+# design.faithmeats.com. Cloudflare Access is configured in the
+# Cloudflare dashboard, not in this file — this is the policy spec.
+#
+# Setup:
+#   1. Go to https://one.dash.cloudflare.com/ → Access → Applications
+#   2. Click "Add an application" → Self-hosted
+#   3. Application name: Allura Design
+#   4. Public hostname: design.faithmeats.com
+#   5. Identity providers: One-time PIN (email)
+#   6. Policy:
+#      - Name: Sabir Asheed only
+#      - Action: Allow
+#      - Include: emails sasheed@faithmeats.com
+#   7. Save
+#
+# After this, anyone visiting design.faithmeats.com will be prompted
+# to enter their email. Only sasheed@faithmeats.com will receive a
+# one-time PIN. All other emails will be denied.
+
+application:
+  name: Allura Design
+  domain: design.faithmeats.com
+  type: self_hosted
+
+policies:
+  - name: "Sabir Asheed only"
+    action: allow
+    include:
+      emails:
+        - sasheed@faithmeats.com
+
+identity_providers:
+  - type: onetime_pin
+    name: Email One-time PIN
+
+session_duration: 24h

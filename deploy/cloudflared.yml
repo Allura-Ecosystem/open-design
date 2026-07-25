@@ -1,0 +1,37 @@
+# Cloudflare Tunnel configuration for Allura Design
+#
+# This file configures a Cloudflare Tunnel to expose the Allura Design
+# daemon at design.faithmeats.com, protected by Cloudflare Access
+# (sasheed@faithmeats.com only).
+#
+# Setup:
+#   1. Create a tunnel at https://one.dash.cloudflare.com/ → Networks → Tunnels
+#   2. Name it "allura-design"
+#   3. Copy the tunnel token to your .env as CLOUDFLARE_TUNNEL_TOKEN
+#   4. Add the public hostname design.faithmeats.com → http://open-design:7456
+#   5. Create a Cloudflare Access application for design.faithmeats.com
+#      with an email policy allowing sasheed@faithmeats.com
+#
+# Alternatively, use the cloudflared CLI:
+#   cloudflared tunnel login
+#   cloudflared tunnel create allura-design
+#   cloudflared tunnel route dns allura-design design.faithmeats.com
+#   cloudflared tunnel run --config deploy/cloudflared.yml allura-design
+
+tunnel: allura-design
+credentials-file: /home/open-design/.cloudflared/allura-design.json
+
+ingress:
+  # design.faithmeats.com → Allura Design daemon
+  # Cloudflare Access (configured separately) protects this hostname
+  # with an email allow-list for sasheed@faithmeats.com
+  - hostname: design.faithmeats.com
+    service: http://open-design:7456
+    originRequest:
+      # Preserve the Host header so the daemon's OD_ALLOWED_ORIGINS
+      # check matches the browser origin
+      httpHostHeader: design.faithmeats.com
+      # Disable TLS verification — the daemon is plain HTTP inside Docker
+      noTLSVerify: true
+  # Catch-all: 404
+  - service: http_status:404
